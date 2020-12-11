@@ -27,20 +27,18 @@ Rails 5.2.3
 - 投稿に応じてカスタマーにスコアを付与<br>
   - スコアが一定以上たまるとメーカーに通知<br>
 
-## カタログ設計<br>
+## Catalogue design<br>
 https://docs.google.com/spreadsheets/d/1pavEFOsaAsg2LY86N63ve0eG75B8d1D_ASm4tkDSpd0/edit?usp=sharing
 
-## テーブル定義<br>
+## Table defination<br>
 https://docs.google.com/spreadsheets/d/1bJKMnksVAG7osblThfLJs9N3dc839DpaIY0mH8kTiKg/edit?usp=sharing
 
-## カラム定義<br>
-https://docs.google.com/spreadsheets/d/1aXbMU4ErZDFsHpSgl0FdtkNYbrCzHLHk96YkrnVtOnU/edit?usp=sharing
-
 ## UIflow<br>
-![tayori_UIflow](https://user-images.githubusercontent.com/44644840/67074967-3580de00-f1c5-11e9-957e-29b620f9dded.jpg)
+![YGN_outfits_UIflow](https://user-images.githubusercontent.com/44644840/67074967-3580de00-f1c5-11e9-957e-29b620f9dded.jpg)
 
-## ER図<br>
+## ER diagram<br>
 https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
+
 ![ER図](https://cacoo.com/diagrams/WNfBDckoFLDJOpBg-26D55.png)
 
 
