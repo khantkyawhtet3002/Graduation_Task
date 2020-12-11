@@ -1,31 +1,30 @@
 # [YGN_outfits]
-## 概要
- 個人作家の作品・品物に対し、購入者達のレビューやコメント、使用例、経年変化などの情報を顧客間や作り手とやりとりできるアプリ。
- 作り手の自己満足、かつ あやふやになりがちな顧客情報や満足度情報の管理・活用が可能になるコミュニケーションツールです。
+## Overview
+ An app that allows customers and creators to exchange information such as reviews, comments, usage examples, and changes over time from purchasers for the works and goods of individual writers.
+ It is a communication tool that enables the self-satisfaction of the creator and the management and utilization of customer information and satisfaction information that tends to be vague.
 
-## コンセプト<br>
- - シンプルで色々な作品形態に対応できること<br>
- - 顧客にも扱いやすいこと<br>
- - SNSとは違い、ある程度クローズドな場であること。
+## Concept<br>
+ - Being able to handle a variety of simple work forms<br>
+ - Easy to handle for customers
 
-## バージョン<br>
-Ruby 2.6.3<br>
-Rails 5.2.3
+## Version<br>
+Ruby 2.6.5<br>
+Rails 5.2.4
 
-## 機能一覧<br>
-- deviseによるログイン機能<br>
-  - カスタマー、メーカー認証機能<br>
-  - メールアドレス、氏名orメーカー名、パスワード必須<br>
-  - パスワード再設定機能<br>
-- カスタマーが該当プロダクトを探しやすい画面遷移<br>
-- メーカーのプロダクトを評価しているカスタマーの一覧
-- 画像アップロード機能<br>
-- 星５段階評価機能で視覚的に評価
-  - 同一プロダクトに対するカスタマー達の平均評価を算出し表示<br>
-- プロダクトの評価に対し、メーカだけでなく他カスタマーもコメントできる<br>
-- カスタマーの氏名やコメントのやりとりは一般非公開<br>
-- 投稿に応じてカスタマーにスコアを付与<br>
-  - スコアが一定以上たまるとメーカーに通知<br>
+## Function list<br>
+- Login function by devise<br>
+  - Customer, maker(seller) certification function<br>
+  - Email address, name or maker(seller)'s name, password required<br>
+  - Password reset function<br>
+- Screen transition that makes it easy for customers to find the product<br>
+- List of customers evaluating the maker(seller)'s products
+- Image upload function<br>
+- Visually evaluate with the 5-star rating function
+  - Calculate and display the average evaluation of customers for the same product<br>
+- Not only the maker(seller) but also other customers can comment on the evaluation of the product.<br>
+- Customer names and comments are not open to the public<br>
+- Give customers a score according to their posts<br>
+  - Notify the maker(seller) when the score is above a certain level<br>
 
 ## Catalogue design<br>
 https://docs.google.com/spreadsheets/d/1pavEFOsaAsg2LY86N63ve0eG75B8d1D_ASm4tkDSpd0/edit?usp=sharing
@@ -33,8 +32,8 @@ https://docs.google.com/spreadsheets/d/1pavEFOsaAsg2LY86N63ve0eG75B8d1D_ASm4tkDS
 ## Table defination<br>
 https://docs.google.com/spreadsheets/d/1bJKMnksVAG7osblThfLJs9N3dc839DpaIY0mH8kTiKg/edit?usp=sharing
 
-## UIflow<br>
-![YGN_outfits_UIflow](https://user-images.githubusercontent.com/44644840/67074967-3580de00-f1c5-11e9-957e-29b620f9dded.jpg)
+## Screen transition diagram<br>
+![YGN_outfits_UIflow]()
 
 ## ER diagram<br>
 https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
@@ -42,7 +41,7 @@ https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
 ![ER図](https://cacoo.com/diagrams/WNfBDckoFLDJOpBg-26D55.png)
 
 
-## 使用Gem<br>
+## Use Gem<br>
 carrierwave<br>
 mini_magick<br>
 devise<br>
@@ -50,5 +49,5 @@ jquery-rails<br>
 rspec-rails<br>
 slim-rails<br>
 
-## 星５段階評価プラグイン
+## 5 star rating plugin
 jQuery Raty
