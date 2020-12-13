@@ -35,13 +35,17 @@ https://docs.google.com/spreadsheets/d/1bJKMnksVAG7osblThfLJs9N3dc839DpaIY0mH8kT
 ## Screen transition diagram<br>
 https://cacoo.com/diagrams/U9myHpqlvSabKcCi/94ACD
 
-![YGN_outfits_diagram](https://cacoo.com/diagrams/U9myHpqlvSabKcCi-94ACD.png)
+![YGN_outfits_screen_transition_diagram](https://cacoo.com/diagrams/U9myHpqlvSabKcCi-94ACD.png)
 
 ## ER diagram<br>
 https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
 
 ![ERdiagram](https://cacoo.com/diagrams/WNfBDckoFLDJOpBg-26D55.png)
 
+## Wireframe<br>
+https://cacoo.com/diagrams/YX5Lx32PSIFGHECk/D919A
+
+![YGN_outfits_Wireframe](https://cacoo.com/diagrams/YX5Lx32PSIFGHECk-D919A.png)
 
 ## Use Gem<br>
 carrierwave<br>
