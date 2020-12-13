@@ -1,7 +1,7 @@
 # [YGN_outfits]
 ## Overview
- An app that allows customers and creators to exchange information such as reviews, comments, usage examples, and changes over time from purchasers for the works and goods of individual writers.
- It is a communication tool that enables the self-satisfaction of the creator and the management and utilization of customer information and satisfaction information that tends to be vague.
+ An app that allows customers and maker(seller) to exchange information such as reviews, comments, usage examples, and etc.
+ It is a communication tool that enables the self-satisfaction of the maker(seller) and the management and utilization of customer information and satisfaction information that tends to be vague.
 
 ## Concept<br>
  - Being able to handle a variety of simple work forms<br>
@@ -44,8 +44,6 @@ https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
 
 ## Wireframe<br>
 https://cacoo.com/diagrams/YX5Lx32PSIFGHECk/D919A
-
-![YGN_outfits_Wireframe](https://cacoo.com/diagrams/YX5Lx32PSIFGHECk-D919A.png)
 
 ## Use Gem<br>
 carrierwave<br>
