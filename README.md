@@ -33,12 +33,14 @@ https://docs.google.com/spreadsheets/d/1pavEFOsaAsg2LY86N63ve0eG75B8d1D_ASm4tkDS
 https://docs.google.com/spreadsheets/d/1bJKMnksVAG7osblThfLJs9N3dc839DpaIY0mH8kTiKg/edit?usp=sharing
 
 ## Screen transition diagram<br>
-![YGN_outfits_UIflow]()
+https://cacoo.com/diagrams/U9myHpqlvSabKcCi/94ACD
+
+![YGN_outfits_diagram](https://cacoo.com/diagrams/U9myHpqlvSabKcCi-94ACD.png)
 
 ## ER diagram<br>
 https://cacoo.com/diagrams/WNfBDckoFLDJOpBg/26D55
 
-![ER図](https://cacoo.com/diagrams/WNfBDckoFLDJOpBg-26D55.png)
+![ERdiagram](https://cacoo.com/diagrams/WNfBDckoFLDJOpBg-26D55.png)
 
 
 ## Use Gem<br>
