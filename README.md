@@ -1,4 +1,4 @@
-# [YGN_outfits]
+# YGN_outfits
 ## Overview
  An app that allows customers and maker(seller) to exchange information such as reviews, comments, usage examples, and etc.
  It is a communication tool that enables the self-satisfaction of the maker(seller) and the management and utilization of customer information and satisfaction information that tends to be vague.
