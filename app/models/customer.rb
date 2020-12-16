@@ -10,4 +10,5 @@ class Customer < ApplicationRecord
   validates :display_name, presence: true, on: :update
   validates :full_name, presence: true
   validates :residence, presence: true, on: :update
+  
 end
