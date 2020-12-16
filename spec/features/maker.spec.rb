@@ -20,7 +20,7 @@ describe 'maker', type: :system do
       fill_in 'Password confirmation', with: 'password'
       click_button 'SIGN UP'
       expect(page).to have_content 'Name translation missing: ja.activerecord.errors.models.maker.attributes.name.blank'
-     end
+     end 
 
     it 'メーカー登録失敗（メールアドレス未入力）' do
       visit new_maker_registration_path

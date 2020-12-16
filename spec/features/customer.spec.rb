@@ -20,7 +20,7 @@ describe 'customer', type: :system do
       fill_in 'Password confirmation', with: 'password'
       click_button 'SIGN UP'
       expect(page).to have_content 'Full name translation missing: ja.activerecord.errors.models.customer.attributes.full_name.blank'
-     end
+     end 
 
     it 'カスタマー登録失敗（メールアドレス未入力）' do
       visit new_customer_registration_path
