@@ -1,0 +1,39 @@
+h2 #{@maker.name}'S PROFILE
+
+- if current_maker == @maker
+  =link_to 'PRODUCT REGISTERATION', new_product_path,class: 'btn btn-outline-default btn-block'
+
+.nav.justify-content-end
+  = link_to "#{@maker.name}'S PRODUCT LIST", products_path(maker_id: @maker.id)
+table.table.table-hover
+  tbody
+    tr
+      th= Maker.human_attribute_name(:name)
+      td= @maker.name
+    tr
+      th= Maker.human_attribute_name(:site_url)
+      td
+        = link_to "#{@maker.site_url}", @maker.site_url, target: :_blank
+    tr
+      th= Maker.human_attribute_name(:overview)
+      td= simple_format(h(@maker.overview), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= Maker.human_attribute_name(:logo)
+      - if @maker.logo.url.present?
+        td= image_tag @maker.logo.url
+      - else
+        td= image_tag 'no-image.png'
+    tr
+      th= Maker.human_attribute_name(:image)
+      - if @maker.image.url.present?
+        td= image_tag @maker.image.url
+      - else
+        td= image_tag 'no-image.png'
+    tr
+      th= Maker.human_attribute_name(:instock)
+      td= simple_format(h(@maker.ivent), {}, sanitize: false, wrapper_tag: "div")
+
+.nav.justify-content-end
+  - if current_maker == @maker
+    = link_to 'EDIT MAKER(SELLER) PROFILE', edit_maker_path(id: @maker.id), class: 'btn btn-primary mr-3'
+    = link_to 'CHANGE LOGIN INFO & DELETE ACC', edit_maker_registration_path, class: 'btn btn-primary mr-3'

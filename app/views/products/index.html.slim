@@ -1,0 +1,38 @@
+.nav.justify-content-center
+- if @maker.logo.present?
+  = image_tag @maker.logo.url
+  h2  #{@maker.name}'S PRODUCT LIST
+
+br
+- if maker_signed_in?
+  =link_to 'REGISTER NEW PRODUCT', new_product_path,class: 'btn btn-outline-default btn-block'
+
+.mb-3
+table.table.table-hover
+  thead.thead-defolt
+    tr
+      th= @products.human_attribute_name(:name)
+      th= @products.human_attribute_name(:evalustes_count)
+      th= @products.human_attribute_name(:overview)
+      th
+
+  tbody
+  - @products.each do |product|
+    tr
+      td= link_to product.name, product
+      / td= image_tag product.image.url
+      td= product.evaluates.count
+      -if product.overview == nil
+          td= ""
+      -else
+          td= product.overview.truncate(20)
+      td
+        -if @maker == current_maker
+          = link_to 'EDIT', edit_product_path(product), class: 'btn btn-default mr-3'
+          = link_to 'DELETE', product, method: :delete, data: { confirm: "DELETE (#{product.name}). IS IT OK?" }, class: 'btn btn-outline-danger'
+        - elsif (current_customer == nil && current_maker == nil) || maker_signed_in?
+          = link_to 'PRODUCT DETAIL & EVALUATION LIST', product, class: 'btn btn-default mr-3'
+        - elsif Evaluate.where(product_id: product.id, customer_id: current_customer.id)[0]
+          =link_to 'EVALUATED', new_evaluate_path(product_id: product.id),class: 'btn btn-outline-default mr-2'
+        - else
+          =link_to 'REVIEW', new_evaluate_path(product_id: product.id),class: 'btn btn-outline-default mr-2'

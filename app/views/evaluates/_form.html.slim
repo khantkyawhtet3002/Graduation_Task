@@ -1,0 +1,34 @@
+table.table.table-hover
+  tbody
+    tr
+      th= Product.human_attribute_name(:name)
+      td= evaluate.product.name
+    tr
+      th= Customer.human_attribute_name(:display_name)
+      td= evaluate.customer.display_name
+    tr
+      th= Product.human_attribute_name(:image)
+      - if evaluate.product.image.url.present?
+        td= image_tag evaluate.product.image.url
+      - else
+        td= image_tag 'no-image.png'
+
+= form_with model: evaluate, local: true do |f|
+  == render 'layouts/error_messages', model: f.object
+  = f.hidden_field :product_id, value: @evaluate.product_id
+  #star.form-group
+    = f.label :rate, class:'col-md-3 col-form-label', id: 'evaluate_rate'
+    = f.hidden_field :rate, id: :review_star
+    == render 'star_js', evaluate: evaluate,
+              score_name: "evaluate[rate]", readonly_flug: "", tag: "#star"
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: 'form-control', id: 'evaluate_content'
+  .form-group
+    = f.label :image
+    = f.file_field :image, class: 'form-control-file', id: 'evaluate_image'
+  - if evaluate.image.url.present?
+    = image_tag evaluate.image.url
+  br
+  br
+  =f.submit "SEND", class: 'btn btn-outline-info btn-block'

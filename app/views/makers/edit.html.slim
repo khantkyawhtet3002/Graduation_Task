@@ -1,0 +1,36 @@
+h2 EDIT MAKER(SELLER) PROFILE
+
+- if @maker == current_maker
+  .nav.justify-content-end
+    = link_to "(#{current_maker.name})'S PRODUCT LIST", makers_path
+
+  = form_with model: @maker, local: true do |f|
+    == render 'layouts/error_messages', model: f.object
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control', id: 'maker_name'
+    .form-group
+      = f.label :site_url
+      = f.text_field :site_url, class: 'form-control', id: 'maker_site_url'
+    .form-group
+      = f.label :overview
+      = f.text_area :overview, rows: 5, class: 'form-control', id: 'maker_overview'
+    .form-group
+      = f.label :logo
+      = f.file_field :logo, class: 'form-control-file', id: 'maker_logo'
+      - if @maker.logo.present?
+        = image_tag  @maker.logo.url
+    .form-group
+      = f.label :image
+      = f.file_field :image, class: 'form-control-file', id: 'maker_image'
+      - if @maker.image.present?
+        = image_tag  @maker.image.url
+    .form-group
+      = f.label :instock
+      = f.text_area :ivent, class: 'form-control', id: 'maker_ivent'
+    =f.submit "UPDATE", class: 'btn btn-outline-default btn-block'
+
+  = link_to   = link_to "EDIT #{current_maker.name}'S LOGIN INFO, DELETE ACC", edit_maker_registration_path
+-else
+  br
+  h3 NOT AUTHORIZED.

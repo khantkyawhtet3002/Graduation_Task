@@ -1,0 +1,54 @@
+
+- if customer_signed_in?
+  h1 WHICH MAKER(SELLER)'S PRODUCT WOULD YOU RATE?
+
+  .mb-3
+  table.table.table-hover
+    thead.thead-defolt
+      tr
+        th= @makers.human_attribute_name(:name)
+        th= @makers.human_attribute_name(:overview)
+        th
+    tbody
+    - @makers.each do |maker|
+      tr
+        td= link_to maker.name, maker
+        -if maker.overview == nil
+          td= "NOT ENTERED"
+        -else
+          td= maker.overview.truncate(40)
+        td
+          = link_to 'PRODUCT LIST', products_path(maker_id: maker.id), class: 'btn btn-outline-default btn-block'
+    end
+
+- unless customer_signed_in?
+
+  h1 MAKER(SELLER)'S LIST
+  div class="ml"
+      div class="ml1"
+        div class="ml1left"
+            img.ml1left1[src="/assets/ml1left.jpg"]
+            img.ml1left2[src="/assets/ml1left1.jpg"]
+        div class="ml1right"
+          img.ml1right1[src="/assets/ml1right.jpg"]
+          img.ml1right2[src="/assets/ml1right1.jpg"]
+      div class="ml2"
+        img.ml2[src="/assets/ml2.jpg"]
+
+div class="lt"
+  .mb-3
+  table.table.table-hover
+    thead.thead-defolt
+      tr
+        th= @makers.human_attribute_name(:name)
+        th= 'Reviewed Product'
+        th
+    tbody
+    - @makers.each do |maker|
+      tr
+        td= link_to maker.name, maker
+        td= maker.products.count
+        td
+          = link_to 'PRODUCT LIST', products_path(maker_id: maker.id), class: 'btn btn-outline-default btn-block'
+
+    end

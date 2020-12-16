@@ -1,0 +1,272 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav-item{
+  margin-left: 1.5em;
+  margin-top: 0.4em;
+  font-size: 0.9em;
+}
+
+.lead{
+  font-weight: bold;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 5px;
+}
+
+.op{
+  font-size: 44px;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: gray;
+  text-decoration: none;
+  opacity: 0.6;
+}
+footer{
+  margin-top: auto;
+}
+
+.table-dark{
+  border: 1px solid #aaa;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.jumbotron {
+  background-color: gray;
+}
+
+.ygnlogo {
+  width: 150px;
+  height: 50px;
+  float: left;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.himage{
+  width: 100%;
+  height: 550px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+
+.gif1{
+  width: 273px;
+  height: 455px;
+  float: left;
+  padding-left: 0px;
+  padding-top: 7px;
+}
+
+.gif2{
+  width: 273px;
+  height: 450px;
+  float: left;
+  padding-left: 20px;
+  padding-top: 0px;
+}
+
+.gif3{
+  width: 273px;
+  height: 450px;
+  float: right;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+
+.gif4{
+  width: 273px;
+  height: 450px;
+  float: right;
+  padding-right: 20px;
+  padding-top: 0px;
+}
+
+.pg1{
+  font-size: 13px;
+  float: left;
+}
+
+.pg2{
+  font-size: 13px;
+  float: left;
+  padding-left: 45px;
+}
+
+.pg3{
+  font-size: 13px;
+  float: right;
+  padding-right: 65px;
+}
+
+.pg4{
+  font-size: 13px;
+  float: right;
+  padding-right: 65px;
+}
+
+.pg5{
+  font-size: 13px;
+  float: left;
+  padding-left: 120px;
+}
+
+.pg6{
+  font-size: 13px;
+  float: right;
+  padding-right: 90px;
+}
+
+.pg7{
+  font-size: 13px;
+  float: right;
+  padding-right: 35px;
+}
+
+.ss7{
+  width: 50%;
+  height:100%;
+  float: left;
+}
+
+.ss8{
+  width: 50%;
+  height:100%;
+  float: right;
+}
+
+.btn{
+  border:2px solid;
+}
+
+.ccma{
+  width: 100%;
+}
+
+.cca{
+  float: left;
+  padding-left: 180px;
+}
+.cma{
+  float: right;
+  padding-right: 150px;
+}
+
+.footerlr{
+  border:2px solid;
+  border-top-color: black;
+  border-bottom-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+
+.ftleft{
+  float: left;
+  padding-left: 350px;
+  padding-top: 80px;
+}
+
+.ftmid{
+  float: left;
+  padding-left: 150px;
+  padding-right: 200px;
+  padding-top: 80px;
+}
+
+.ftright{
+  float: right;
+  padding-right: 200px;
+  padding-top: 80px;
+}
+
+.mpu{
+  width:170px;
+  height:70px;
+}
+
+.ml{
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.ml1{
+  width: 700px;
+  height: 100%;
+  float: left;
+  padding-bottom: 40px;
+}
+
+.ml1left{
+  width: 49%;
+  height: 100%;
+  float: left;
+}
+
+.ml1left1{
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.ml1left2{
+  width: 100%;
+  height: 100%;
+  float: left;
+  padding-top: 10px;
+}
+
+.ml1right{
+  width: 49%;
+  height: 100%;
+  float: right;
+}
+
+.ml1right1{
+  width: 100%;
+  height: 100%;
+  float: right;
+}
+
+.ml1right2{
+  width: 100%;
+  height: 100%;
+  float: right;
+  padding-top: 10px;
+}
+
+.ml2{
+  width: 396px;
+  height: 455px;
+  float: right;
+  padding-bottom: 0px;
+}

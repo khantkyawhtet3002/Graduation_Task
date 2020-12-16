@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    title
+      | YGN_outfits_official
+    = csrf_meta_tags
+    meta name="viewport" content="width=device-width"
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    script src="https://kit.fontawesome.com/18f0accedf.js" crossorigin="anonymous"
+  body
+    nav class="navbar navbar-expand-lg navbar-light bg-light"
+      a class="navbar-brand" href="/"
+      = link_to image_tag("ygn.png", class: "ygnlogo"), href="/"
+      /img.ygnlogo[src="/assets/ygn.png"]
+      button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"
+        span class="navbar-toggler-icon"
+
+      div class="collapse navbar-collapse" id="navbarNav"
+        ul class="navbar-nav"
+          - if maker_signed_in?
+            li class="nav-item"
+              = link_to "(#{current_maker.name})'S PROFILE", maker_path(current_maker)
+            li class="nav-item"
+              =link_to 'PRODUCT REGISTERATION', new_product_path
+            li class="nav-item"
+              =link_to 'PRODUCT LIST', products_path(maker_id: current_maker.id)
+            li class="nav-item"
+              = link_to "LOGOUT", destroy_maker_session_path, method: :delete
+          - elsif customer_signed_in?
+            li class="nav-item"
+              = link_to "(#{current_customer.display_name})'S PROFILE", customer_path(current_customer)
+            li class="nav-item"
+              =link_to 'REGISTER NEW RATING', makers_path
+            li class="nav-item"
+              =link_to 'EVALUATED ITEM LIST', evaluates_path(customer_id: current_customer.id)
+            li class="nav-item"
+              = link_to "LOGOUT", destroy_customer_session_path, method: :delete
+          - else
+            li class="nav-item"href="#"
+              = link_to 'MAKER(SELLER) LOGIN', new_maker_session_path
+            li class="nav-item"
+              = link_to 'CUSTOMER LOGIN', new_customer_session_path
+            li class="nav-item"
+              = link_to 'MAKER(SELLER) SIGN UP', new_maker_registration_path
+            li class="nav-item"
+              = link_to 'CUSTOMER SIGN UP', new_customer_registration_path
+br
+    .container.mb-5
+
+      = yield
+
+      .op
+        = link_to 'Back', 'javascript:history.back()'
+      - if flash.notice.present?
+        .alert.alert-success
+          = flash.notice
+
+
+    footer class="footer text-center bg-light"
+div class="footerlr"
+  div class="ftleft"
+      p YGN_outfits PAYMENT
+      img.mpu[src="/assets/mpu.png"]
+  div class="ftmid"
+      p ABOUT US
+      p CEO : KHANT KYAW HTET
+      p Business license number : 111-44-99999
+      p E-mail : khantkyawhtet@gmail.com
+      p Address : YGN_outfits, 1th floor, A-1, Sanchaung str, Sanchaung-Township, Yangon , Myanmar
+      p Communication sales business report: 2020–Sanchaung-Yangon–146
+      p Personal Information Protection Officer of Privacy : Shunske [Check business information]
+  div class="ftright"
+      p YGN_OUTFITS_OFFICIAL &COPY; 2020
