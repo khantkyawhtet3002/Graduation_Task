@@ -5,5 +5,4 @@ class ScoreMailer < ApplicationMailer
     mail to: "#{@maker.email}",
     subject: "Notice:::Customers have a score of over 100!!!"
   end
-end
-  
+end 
