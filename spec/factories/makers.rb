@@ -8,4 +8,4 @@ FactoryBot.define do
     image { nil }
     ivent { 'Manufacturer 1 Event Notice' }
   end
-end
+end 

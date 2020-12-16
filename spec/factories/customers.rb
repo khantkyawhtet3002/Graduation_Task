@@ -8,4 +8,4 @@ FactoryBot.define do
     score { 40 }
     residence { 'Seoul' }
   end
-end
+end 

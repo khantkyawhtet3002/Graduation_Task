@@ -6,4 +6,4 @@ FactoryBot.define do
     product
     customer
   end
-end
+end 
