@@ -31,4 +31,5 @@ class Evaluate < ApplicationRecord
     customer.score -= 10
     customer.save!
   end
+  
 end
