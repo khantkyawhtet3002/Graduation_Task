@@ -56,10 +56,6 @@ class EvaluatesController < ApplicationController
     params.require(:evaluate).permit(:product_id, :customer_id, :rate, :image, :image_cache, :content, :comment)
   end
 
-  # def comment_params
-  #   params.require(:evaluate).permit(:id)
-  # end
-
   def set_evaluate
     @evaluate = Evaluate.find(params[:id])
   end
