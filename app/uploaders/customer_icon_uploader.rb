@@ -30,7 +30,7 @@ process :resize_to_limit => [100, 100] # 画像サイズの調整
   # def scale(width, height)
   #   # do something
   # end
-
+ 
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]
