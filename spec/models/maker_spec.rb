@@ -25,7 +25,7 @@ RSpec.describe Maker, type: :model do
     maker = Maker.new(name: 'test5', email: 'test5@gmail.com', password: '12345')
     expect(maker).not_to be_valid
   end
-
+ 
   it 'パスワードと確認用パスワードが一致しないと登録できない' do
     maker = Maker.new(name: 'test6', email: 'test6@gmail.com', password: '123456', password_confirmation: '1234567')
     expect(maker).not_to be_valid
@@ -37,4 +37,3 @@ RSpec.describe Maker, type: :model do
     expect(maker).not_to be_valid
   end
 end
-

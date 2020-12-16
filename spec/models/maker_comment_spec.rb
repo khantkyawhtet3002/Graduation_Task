@@ -24,4 +24,4 @@ RSpec.describe MakerComment, type: :model do
     expect(maker_comment).to be_invalid
   end
 
-end
+end 

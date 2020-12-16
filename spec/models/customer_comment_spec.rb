@@ -23,5 +23,5 @@ RSpec.describe CustomerComment, type: :model do
     )
     expect(customer_comment).to be_invalid
   end
-
+ 
 end

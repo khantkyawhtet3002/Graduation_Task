@@ -20,7 +20,7 @@ RSpec.describe Customer, type: :model do
     customer = Customer.new(full_name: '開発テス実', email: 'test4@gmail.com', password: nil)
     expect(customer).not_to be_valid
   end
-
+ 
   it 'パスワードの文字数が足りない' do
     customer = Customer.new(full_name: '開発テス男', email: 'test5@gmail.com', password: '12345')
     expect(customer).not_to be_valid

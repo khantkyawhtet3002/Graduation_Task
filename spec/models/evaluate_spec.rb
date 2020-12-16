@@ -26,7 +26,7 @@ RSpec.describe Evaluate, type: :model do
       content: nil
     )
     expect(evaluate).to be_invalid
-  end
+  end 
 
   it '同じカスタマーで同じプロダクトを２度評価することはできない' do
     evaluate = Evaluate.new(

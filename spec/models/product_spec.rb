@@ -27,4 +27,4 @@ RSpec.describe Product, type: :model do
     expect(product).to be_invalid
   end
 
-end
+end 
