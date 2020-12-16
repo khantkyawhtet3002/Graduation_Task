@@ -11,7 +11,6 @@ class CustomerComment < ApplicationRecord
 
   private
 
-  
   def grant_score_3
     if self.customer != self.evaluate.customer
       customer.score += 3
