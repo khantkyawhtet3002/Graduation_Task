@@ -6,4 +6,5 @@ class HomeController < ApplicationController
   def show
     @products = Product.where(maker_id: params[:maker_id])
   end
+  
 end
