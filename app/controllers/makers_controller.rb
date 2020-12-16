@@ -31,4 +31,5 @@ class MakersController < ApplicationController
   def set_maker
     @maker = Maker.find(params[:id])
   end
+  
 end
