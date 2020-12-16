@@ -1,0 +1,92 @@
+.nav.justify-content-center
+  h2 EVALUATION OF #{@evaluate.customer.display_name} BY #{@evaluate.product.name}
+br
+.nav.justify-content-center
+
+  - if @evaluate.customer.icon.url.present?
+    td= image_tag @evaluate.customer.icon.url, class: "rounded-circle"
+  - else
+    td= image_tag 'no-image.png', class: "rounded-circle"
+br
+
+  - if @evaluate.customer == current_customer
+    = link_to 'EDIT REVIEW', edit_evaluate_path(id: @evaluate.id)
+table.table.table-hover
+  tbody
+    tr
+      th= Maker.human_attribute_name(:name)
+      td= @evaluate.product.maker.name
+    tr
+      th= Product.human_attribute_name(:image)
+      -if @evaluate.product.image.url.present?
+        td= image_tag @evaluate.product.image.url
+      - else
+        td= image_tag 'no-image.png'
+    tr
+      th= Evaluate.human_attribute_name(:image)
+      - if @evaluate.image.url.present?
+        td= image_tag @evaluate.image.url
+      - else
+        td= image_tag 'no-image.png'
+    tr
+      th= Customer.human_attribute_name(:display_name)
+      td= @evaluate.customer.display_name
+    tr
+      th= Evaluate.human_attribute_name(:rate)
+      td
+        = @evaluate.rate
+        | <div id="star-#{@evaluate.id}">
+        == render 'star_js', evaluate: @evaluate, score_name: "", readonly_flug: true, tag: "#star-#{@evaluate.id}"
+    tr
+      th= Evaluate.human_attribute_name(:content)
+      td= simple_format(h(@evaluate.content), {}, sanitize: false, wrapper_tag: "div")
+.nav.justify-content-end
+  = link_to "EVALUATION LIST OF #{@evaluate.customer.display_name}", evaluates_path(customer_id: @evaluate.customer_id)
+br
+
+-if @maker_comments == []
+  .card style=("padding: 10px; margin-bottom: 10px;")
+    .card-text
+      p No comments from the manufacturer yet.
+- elsif @maker_comments[0]
+  .card style=("padding: 10px; margin-bottom: 10px;")
+    .card-body
+      .card-title
+        h5 Comments from the manufacturer:
+        p.card-text
+          = @maker_comments[0].content
+          br
+          br
+          - if current_maker == @maker_comments[0].maker
+            = link_to 'EDIT', edit_evaluate_maker_comment_path(evaluate_id: @evaluate.id, id: @maker_comments[0].id), class: "card-link"
+            = link_to 'DELETE', evaluate_maker_comment_path(evaluate_id: @evaluate.id, id: @maker_comments[0].id), method: :delete, data: { confirm: "DLETE THE COMMENT. IS IT OK?" }, class: "card-link"
+
+- if current_maker == @maker && @maker_comments == [] && maker_signed_in?
+  h5 Add a comment from the manufacturer to this rating:
+  = render partial: 'maker_comments/form', locals: {evaluate: @evaluate, maker_comment: @maker_comment}
+br
+br
+- if customer_signed_in? || current_maker == @maker
+  - @customer_comments.each do |customer_comment|
+    .card style=("padding: 10px; margin-bottom: 10px;")
+      .card-body
+        - if customer_comment.customer.icon.url.present?
+          td= image_tag customer_comment.customer.icon.url, class: "rounded-circle"
+        - else
+          td= image_tag 'no-image.png', class: "rounded-circle"
+        .card-title
+          h5 Comment from #{customer_comment.customer.display_name}:
+          p.card-text
+            = customer_comment.content
+            br
+            br
+            - if customer_comment.customer == current_customer
+              = link_to 'EDIT', edit_evaluate_customer_comment_path(evaluate_id: @evaluate.id, id: customer_comment.id), class: "card-link"
+              = link_to 'DELETE', evaluate_customer_comment_path(evaluate_id: @evaluate.id, id: customer_comment.id), method: :delete, data: { confirm: "DELETE THE COMMENT. IS IT OK?" }, class: "card-link"
+            -else
+              = link_to 'CUSTOMER PROFILE', customer_path(id: customer_comment.customer_id), class: "card-link"
+            br
+
+- if customer_signed_in?
+  h5 Add a comment:
+  = render partial: 'customer_comments/form', locals: {evaluate: @evaluate, customer_comment: @customer_comment}

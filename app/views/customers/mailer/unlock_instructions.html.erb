@@ -1,0 +1,7 @@
+<p>HELLO <%= @resource.email %>!</p>
+
+<p>YOUR ACCOUNT HAS BEEN LOCKED DUE TO AN EXCESSIVE NUMBER OF UNSUCCESSFUL SIGN IN ATTEMPTS.</p>
+
+<p>CLICK THE LINK BELOW TO UNLOCK YOUR ACCOUNT:</p>
+
+<p><%= link_to 'UNLOCK MY ACCOUNT', unlock_url(@resource, unlock_token: @token) %></p>

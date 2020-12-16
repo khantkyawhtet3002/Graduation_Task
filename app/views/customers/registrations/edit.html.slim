@@ -1,0 +1,45 @@
+h2
+  | EDIT CUSTOMER INFORMATION
+  / = resource_name.to_s.humanize
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+    br
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    div
+      | Currently waiting confirmation for:
+      = resource.unconfirmed_email
+  .field
+    = f.label :password
+    i
+      | (If you do not want to change the password, leave it blank and update it.)
+    br
+    = f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder:"Enter new password"
+    - if @minimum_password_length
+      em
+        = @minimum_password_length
+        |  characters or more
+  br
+  .field
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder:"Re-enter new password"
+  .field
+    = f.label :current_password
+    i
+      | (You need your current password to see the changes)
+    br
+    = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
+    br
+  .actions
+    = f.submit "UPDATE", class: "btn btn-outline-default btn-block"
+br
+br
+h3
+  | ACCOUNT DELETION
+p
+  | DO YOU WANT TO DELETE?
+  = button_to "DELETE ACC", registration_path(resource_name), data: { confirm: "YOUR ACC WILL BE DELETED. IS IT OK?" }, method: :delete, class: "btn btn-outline-danger"

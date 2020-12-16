@@ -1,0 +1,38 @@
+.nav.justify-content-center
+  h2 #{@customer.display_name}'S PROFILE
+.nav.justify-content-center
+
+  - if @customer.icon.url.present?
+    td= image_tag @customer.icon.url, class: "rounded-circle"
+  - else
+    td= image_tag 'no-image.png', class: "rounded-circle"
+br
+-if customer_signed_in?
+  =link_to "LET'S RATE", makers_path,class: 'btn btn-outline-default btn-block'
+
+.nav.justify-content-end
+  = link_to "EVALUATION LIST OF #{@customer.display_name}", evaluates_path(customer_id: @customer.id)
+table.table.table-hover
+  tbody
+    -if maker_signed_in? || @customer == current_customer
+      tr
+        th= Customer.human_attribute_name(:full_name)
+        td= "#{@customer.full_name}  (Your name will only be displayed to the creator and you.）"
+    tr
+      th= Customer.human_attribute_name(:display_name)
+      td= "#{@customer.display_name}  (The name that will be displayed to other users.）"
+    tr
+      th= Customer.human_attribute_name(:score)
+      td= @customer.score
+    tr
+      th= Customer.human_attribute_name(:residence)
+      td= @customer.residence
+
+.nav.justify-content-end
+  -if current_customer == @customer
+    = link_to 'EDIT PROFILE', edit_customer_path(id: @customer.id), class: 'btn btn-outline-default mr-3'
+
+    = link_to 'CHANGE LOGIN INFO, DELETE ACC', edit_customer_registration_path, class: 'btn btn-outline-danger'
+
+
+/ If there is a line break, write like td= simple_format(h(@customer.price), {}, sanitize: false, wrapper_tag: "div")

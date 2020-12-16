@@ -1,0 +1,12 @@
+h2
+  | RESEND UNLOCK PROCEDURE
+= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+  == render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+    br
+  .actions
+    = f.submit "RESEND", class: "btn btn-outline-success btn-block"
+== render "makers/shared/links"

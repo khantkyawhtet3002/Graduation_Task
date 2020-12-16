@@ -1,0 +1,5 @@
+h3 LET'S REVIEW (#{@evaluate.product.name})
+== render partial: 'form', locals: {evaluate: @evaluate}
+
+.nav.justify-content-end
+  = link_to 'BACK', 'javascript:history.back()'

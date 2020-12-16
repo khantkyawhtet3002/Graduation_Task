@@ -1,0 +1,7 @@
+h2 #{@product.name}'S DEATIL
+
+- if @product.maker == current_maker
+  == render partial: 'form', locals: {product: @product}
+-else
+  br
+  h3 NOT AUTHORIZED.

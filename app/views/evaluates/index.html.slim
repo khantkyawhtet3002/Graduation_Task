@@ -1,0 +1,32 @@
+h2  #{@customer.display_name}'S EVALUATION PRODUCT LIST
+- if @customer == current_customer
+  =link_to "LET'S EVALUATE NEW PRODUCT", makers_path,class: 'btn btn-outline-default btn-block'
+
+.mb-3
+table.table.table-hover
+  thead.thead-defolt
+    tr
+      th= Maker.human_attribute_name(:name)
+      th= Product.human_attribute_name(:name)
+      th= Evaluate.human_attribute_name(:rate)
+      th= "Number of comments"
+      th
+  tbody
+  - @evaluates.each do |evaluate|
+    tr
+      td= link_to evaluate.product.maker.name, evaluate
+      td= link_to evaluate.product.name, evaluate
+      td
+        = evaluate.rate
+        | <div id="star-#{evaluate.id}">
+        == render 'star_js', evaluate: evaluate, score_name: "", readonly_flug: true, tag: "#star-#{evaluate.id}"
+      td= evaluate.customer_comments.count
+      td
+        - if evaluate.customer == current_customer
+          = link_to 'EDIT', edit_evaluate_path(evaluate), class: 'btn btn-outline-default btn-block'
+          = link_to 'DELETE', evaluate, method: :delete,
+            data: { confirm: "Delete the evaluation of the product(#{evaluate.product.name}). Is it OK?" },
+            class: 'btn btn-outline-default btn-block'
+        - elsif maker_signed_in?
+          = link_to 'EAVLUATION DETAILS', evaluate_path(evaluate), class: 'btn btn-outline-default btn-block'
+  end
