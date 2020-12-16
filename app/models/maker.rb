@@ -22,5 +22,5 @@ class Maker < ApplicationRecord
 
   mount_uploader :image, MakerImageUploader
   mount_uploader :logo, MakerLogoUploader
-
+ 
 end
