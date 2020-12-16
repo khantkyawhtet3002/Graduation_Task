@@ -40,5 +40,5 @@ class MakerCommentsController < ApplicationController
   def maker_comment_params
     params.require(:maker_comment).permit(:evaluate_id, :maker_id, :content)
   end
-  
+
 end
