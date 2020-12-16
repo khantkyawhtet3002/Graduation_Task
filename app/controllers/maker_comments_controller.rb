@@ -11,8 +11,6 @@ class MakerCommentsController < ApplicationController
       @evaluate = @maker_comment.evaluate
       flash[:alert] = @maker_comment.errors.full_messages.shift
       redirect_back fallback_location: @evaluate.maker_comments
-      # @evaluate = Evaluate.find(@maker_comment.evaluate_id)
-      # render :new
     end
   end
 
@@ -42,4 +40,5 @@ class MakerCommentsController < ApplicationController
   def maker_comment_params
     params.require(:maker_comment).permit(:evaluate_id, :maker_id, :content)
   end
+  
 end
