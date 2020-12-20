@@ -9,7 +9,7 @@ RSpec.describe Product, type: :model do
     product = Product.new(
       name: "プロダクト１",
       price: "5500~6000円",
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       season: "20017.ss",
       maker_id: @maker.id
     )
@@ -20,11 +20,11 @@ RSpec.describe Product, type: :model do
     product = Product.new(
       name: nil,
       price: "5500~6000円",
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       season: "20017.ss",
       maker_id: @maker.id
     )
     expect(product).to be_invalid
   end
 
-end 
+end

@@ -22,24 +22,24 @@ RSpec.describe Evaluate, type: :model do
       product_id: @product.id,
       customer_id: @customer.id,
       rate: 4.0,
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       content: nil
     )
     expect(evaluate).to be_invalid
-  end 
+  end
 
   it '同じカスタマーで同じプロダクトを２度評価することはできない' do
     evaluate = Evaluate.new(
       product_id: 1,
       customer_id: 1,
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       content: '感想を投稿するテスト1'
     )
     second_evaluate = Evaluate.new(
       product_id: 1,
       customer_id: 1,
       rate: 3.0,
-      image: open("#{Rails.root}/db/seed_fixtures/sleevecasualshirt.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleevecasualshirt.gif"),
       content: '感想を投稿するテスト2'
     )
     expect(second_evaluate).to be_invalid
