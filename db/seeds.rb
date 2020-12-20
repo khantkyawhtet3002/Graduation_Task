@@ -86,7 +86,7 @@ Maker.create!(
       ivent: "Sale [𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀++] 𝐬𝐧𝐞𝐚𝐤𝐞𝐫 𝐜𝐨𝐥𝐥𝐞𝐜𝐭𝐢𝐨𝐧𝐬👟💥"
     }
   ]
-) 
+)
 
 Product.create!(
   [
@@ -98,7 +98,7 @@ Product.create!(
                 •color - 6colors
                 •preorder/ ",
       price: "1500~2200Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       season: "2/3weeks"
     },
     {
@@ -108,7 +108,7 @@ Product.create!(
                 •size - M/L/XL/2XL
                 •preorder/",
       price: "1800~2500Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/sleevecasualshirt.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleevecasualshirt.gif"),
       season: "2/3weeks"
     },
     {
@@ -119,25 +119,23 @@ Product.create!(
                 ✔️Only limited quantities
                 Grab yours before its sold out again !!",
       price: "1400Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/chainnecklaces.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/chainnecklaces.gif"),
       season: "1week"
     },
     {
       maker_id: 1,
-      name: "Tote Bag",
-      overview: "𝐇𝐘𝐏𝐄’𝐬 𝐓𝐨𝐭𝐞 𝐁𝐚𝐠 𝐜𝐨𝐥𝐥𝐞𝐜𝐭𝐢𝐨𝐧𝐬  🍃♻️
+      name: "Mini Bag",
+      overview: "𝐇𝐘𝐏𝐄’𝐬 Mini Bag collections  🍃♻️
                 •preorder/ ",
       price: "9000Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/totebag1.jpg"),
-      # image: open("#{Rails.root}/db/seed_fixtures/zuta.jpg"),
-      #この画像をherokuでdb:seedするとなぜかエラーがでてしまう
+      image: open("#{Rails.root}/db/seed_fixtures/minibag.gif"),
       season: "2/3weeks"
     },
     {
       maker_id: 1,
       name: "Mogern Studio /𝟐𝟎𝐬𝐬 𝐂𝐨𝐥𝐥𝐞𝐜𝐭𝐢𝐨𝐧",
       price: "20000~30000Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/mogern.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/mogern.gif"),
       season: "2/3weeks"
     },
     {
@@ -151,7 +149,7 @@ Product.create!(
       maker_id: 2,
       name: "19Studio / 𝟐𝟎𝐬𝐬 𝐂𝐨𝐥𝐥𝐞𝐜𝐭𝐢𝐨𝐧",
       price: "22000Ks",
-      image: open("#{Rails.root}/db/seed_fixtures/19studio.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/19studio.gif"),
       season: "2/3weeks"
     },
     {
@@ -262,7 +260,7 @@ Evaluate.create!(
       product_id: 1,
       customer_id: 2,
       rate: 3.5,
-      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/sleeveshirt1.gif"),
       content: "I like it, but there is no S size."
     },
     {
@@ -283,7 +281,7 @@ Evaluate.create!(
       product_id: 11,
       customer_id: 2,
       rate: 3.0,
-      image: open("#{Rails.root}/db/seed_fixtures/totebag1.jpg"),
+      image: open("#{Rails.root}/db/seed_fixtures/minibag.gif"),
       content: "Do you have any other designs? I'd like the color to be black as well."
     },
     {
