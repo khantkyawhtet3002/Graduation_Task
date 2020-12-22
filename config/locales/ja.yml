@@ -54,6 +54,7 @@ ja:
         icon: アイコン
         score: スコア
         residence: 居住地
+        address: アドレス
         current_password: 現在のパスワード
         password: パスワード
         password_confirmation: 確認用パスワード
